@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code&family=Poppins:wght@200;400&display=swap" rel="stylesheet" />
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -10,6 +13,26 @@
         margin: 0;
         padding: 0;
         box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+      }
+
+      body {
+        background-color: #ddd;
+        background-image: url("ney.png");
+        background-repeat: repeat;
+        background-size: 300px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+
+      main {
+        border-radius: 30px;
+        max-width: 1200px;
+        margin: auto;
+        background-color: #fff;
+        padding: 30px;
       }
 
       .center {
@@ -18,7 +41,6 @@
         row-gap: 10px;
         justify-content: center;
         align-items: center;
-        width: 100%;
       }
 
       p {
@@ -26,10 +48,12 @@
       }
 
       span {
+        font-family: "Fira Code", monospace;
         margin: 0 6px;
         padding: 3px;
         border-radius: 50%;
-        border: .5px solid #000;
+        border: 0.5px solid #000;
+        font-size: 14px;
       }
 
       .selected {
@@ -38,11 +62,15 @@
       }
 
       .input {
-        margin: 30px 0;
+        margin: 0 0 30px 0;
       }
 
       input {
         width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        text-align: center;
+        font-size: 20px;
       }
 
       .grid {
@@ -52,30 +80,40 @@
       }
 
       .jogador {
-        grid-column: span 6 / span 6;
+        grid-column: span 3;
       }
 
       .jogador li {
         margin: 10px 0;
+      }
+
+      ul {
+        list-style: none;
+      }
+
+      h1 {
+        margin-bottom: 10px;
       }
     </style>
   </head>
 
   <body>
     <main class="center">
+      <h1>Mega Sena dos Cucks</h1>
+
       <div class="input">
-        <input type="text" onchange="selecionar(this)" />
-        <input type="text" onchange="selecionar(this)" />
-        <input type="text" onchange="selecionar(this)" />
-        <input type="text" onchange="selecionar(this)" />
-        <input type="text" onchange="selecionar(this)" />
-        <input type="text" onchange="selecionar(this)" />
+        <input id="bola1" type="text" oninput="processar()" />
+        <input id="bola2" type="text" oninput="processar()" />
+        <input id="bola3" type="text" oninput="processar()" />
+        <input id="bola4" type="text" oninput="processar()" />
+        <input id="bola5" type="text" oninput="processar()" />
+        <input id="bola6" type="text" oninput="processar()" />
       </div>
 
       <div class="grid">
         <div class="jogador">
           <p>gabriel:</p>
-          <ol>
+          <ul>
             <li>
               <span class="03">03</span><span class="17">17</span><span class="22">22</span><span class="37">37</span
               ><span class="39">39</span><span class="45">45</span>
@@ -92,12 +130,12 @@
               <span class="08">08</span><span class="19">19</span><span class="27">27</span><span class="36">36</span
               ><span class="44">44</span><span class="53">53</span>
             </li>
-          </ol>
+          </ul>
         </div>
 
         <div class="jogador">
           <p>thal:</p>
-          <ol>
+          <ul>
             <li>
               <span class="21">21</span><span class="19">19</span><span class="59">59</span><span class="43">43</span
               ><span class="26">26</span><span class="04">04</span>
@@ -114,12 +152,12 @@
               <span class="09">09</span><span class="59">59</span><span class="51">51</span><span class="53">53</span
               ><span class="22">22</span><span class="52">52</span>
             </li>
-          </ol>
+          </ul>
         </div>
 
         <div class="jogador">
           <p>murilo:</p>
-          <ol>
+          <ul>
             <li>
               <span class="08">08</span><span class="13">13</span><span class="17">17</span><span class="22">22</span
               ><span class="47">47</span><span class="51">51</span>
@@ -136,12 +174,12 @@
               <span class="01">01</span><span class="07">07</span><span class="26">26</span><span class="41">41</span
               ><span class="49">49</span><span class="56">56</span>
             </li>
-          </ol>
+          </ul>
         </div>
 
         <div class="jogador">
           <p>JoãoVictor:</p>
-          <ol>
+          <ul>
             <li>
               <span class="04">04</span><span class="18">18</span><span class="23">23</span><span class="38">38</span
               ><span class="40">40</span><span class="46">46</span>
@@ -158,12 +196,12 @@
               <span class="01">01</span><span class="10">10</span><span class="25">25</span><span class="35">35</span
               ><span class="53">53</span><span class="58">58</span>
             </li>
-          </ol>
+          </ul>
         </div>
 
         <div class="jogador">
           <p>tontoin:</p>
-          <ol>
+          <ul>
             <li>
               <span class="16">16</span><span class="36">36</span><span class="45">45</span><span class="47">47</span
               ><span class="51">51</span><span class="52">52</span>
@@ -180,12 +218,12 @@
               <span class="05">05</span><span class="10">10</span><span class="46">46</span><span class="48">48</span
               ><span class="57">57</span><span class="59">59</span>
             </li>
-          </ol>
+          </ul>
         </div>
 
         <div class="jogador">
           <p>Vilar:</p>
-          <ol>
+          <ul>
             <li>
               <span class="07">07</span><span class="09">09</span><span class="13">13</span><span class="24">24</span
               ><span class="26">26</span><span class="32">32</span>
@@ -202,12 +240,12 @@
               <span class="09">09</span><span class="14">14</span><span class="34">34</span><span class="37">37</span
               ><span class="49">49</span><span class="46">46</span>
             </li>
-          </ol>
+          </ul>
         </div>
 
         <div class="jogador">
           <p>Luis:</p>
-          <ol>
+          <ul>
             <li>
               <span class="02">02</span><span class="08">08</span><span class="18">18</span><span class="22">22</span
               ><span class="35">35</span><span class="37">37</span>
@@ -224,12 +262,12 @@
               <span class="08">08</span><span class="41">41</span><span class="16">16</span><span class="28">28</span
               ><span class="19">19</span><span class="48">48</span>
             </li>
-          </ol>
+          </ul>
         </div>
 
         <div class="jogador">
           <p>Luan:</p>
-          <ol>
+          <ul>
             <li>
               <span class="25">25</span><span class="33">33</span><span class="07">07</span><span class="11">11</span
               ><span class="45">45</span><span class="50">50</span>
@@ -246,7 +284,51 @@
               <span class="15">15</span><span class="54">54</span><span class="33">33</span><span class="28">28</span
               ><span class="20">20</span><span class="01">01</span>
             </li>
-          </ol>
+          </ul>
+        </div>
+
+        <div class="jogador">
+          <p>Leo:</p>
+          <ul>
+            <li>
+              <span class="05">05</span><span class="17">17</span><span class="26">26</span><span class="39">39</span
+              ><span class="46">46</span><span class="53">53</span>
+            </li>
+            <li>
+              <span class="15">15</span><span class="19">19</span><span class="24">24</span><span class="31">31</span
+              ><span class="44">44</span><span class="51">51</span>
+            </li>
+            <li>
+              <span class="09">09</span><span class="17">17</span><span class="22">22</span><span class="44">44</span
+              ><span class="49">49</span><span class="56">56</span>
+            </li>
+            <li>
+              <span class="02">02</span><span class="39">39</span><span class="10">10</span><span class="27">27</span
+              ><span class="50">50</span><span class="19">19</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="jogador">
+          <p>welg24:</p>
+          <ul>
+            <li>
+              <span class="??">??</span><span class="??">??</span><span class="??">??</span><span class="??">??</span
+              ><span class="??">??</span><span class="??">??</span>
+            </li>
+            <li>
+              <span class="??">??</span><span class="??">??</span><span class="??">??</span><span class="??">??</span
+              ><span class="??">??</span><span class="??">??</span>
+            </li>
+            <li>
+              <span class="??">??</span><span class="??">??</span><span class="??">??</span><span class="??">??</span
+              ><span class="??">??</span><span class="??">??</span>
+            </li>
+            <li>
+              <span class="??">??</span><span class="??">??</span><span class="??">??</span><span class="??">??</span
+              ><span class="??">??</span><span class="??">??</span>
+            </li>
+          </ul>
         </div>
       </div>
     </main>
@@ -259,8 +341,35 @@
       });
     };
 
-    const selecionar = (e) => {
-      pintar(e.value.padStart(2, "0"));
+    const processar = () => {
+      // desseleciona todos
+      Object.values(document.getElementsByClassName("selected")).forEach((element) => {
+        element.classList.remove("selected");
+      });
+
+      // busca valores digitados nos inputs
+      const values = [
+        document.getElementById("bola1")?.value,
+        document.getElementById("bola2")?.value,
+        document.getElementById("bola3")?.value,
+        document.getElementById("bola4")?.value,
+        document.getElementById("bola5")?.value,
+        document.getElementById("bola6")?.value,
+      ];
+
+      // pinta todas as bolas que tenham o valor de algum input
+      values.forEach((value) => pintar(value?.padStart(2, "0")));
+
+      Object.values(document.getElementsByTagName("ul")).forEach((element) => {
+        // ul
+        Object.values(element.children).forEach((subElement) => {
+          // li
+          const counter = Object.values(subElement.children).reduce((acc, cur) => {
+            // span
+            return acc + (cur.classList.contains("selected") ? 1 : 0);
+          }, 0);
+        });
+      });
     };
   </script>
 </html>
