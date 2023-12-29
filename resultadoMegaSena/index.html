@@ -341,6 +341,23 @@
       });
     };
 
+    const contarPintados = (element) => {
+      const counter = Object.values(element.children).reduce((acc, cur) => {
+        // span
+        return acc + (cur.classList.contains("selected") ? 1 : 0);
+      }, 0);
+      return counter;
+    };
+
+    const moverParaCima = (elemento) => {
+      const lista = elemento.parentNode;
+      const index = Array.prototype.indexOf.call(lista.children, elemento);
+
+      if (index > 0) {
+        lista.insertBefore(elemento, lista.children[index - 1]);
+      }
+    };
+
     const processar = () => {
       // desseleciona todos
       Object.values(document.getElementsByClassName("selected")).forEach((element) => {
@@ -360,15 +377,13 @@
       // pinta todas as bolas que tenham o valor de algum input
       values.forEach((value) => pintar(value?.padStart(2, "0")));
 
+      // ordena o jogo que tem mais numeros selecionados
       Object.values(document.getElementsByTagName("ul")).forEach((element) => {
-        // ul
-        Object.values(element.children).forEach((subElement) => {
-          // li
-          const counter = Object.values(subElement.children).reduce((acc, cur) => {
-            // span
-            return acc + (cur.classList.contains("selected") ? 1 : 0);
-          }, 0);
-        });
+        for (let i = 0; i < 3; i++) {
+          if (contarPintados(Object.values(element.children)[i + 1]) > contarPintados(Object.values(element.children)[i])) {
+            moverParaCima(Object.values(element.children)[i + 1]);
+          }
+        }
       });
     };
   </script>
