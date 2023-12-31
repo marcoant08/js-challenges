@@ -26,7 +26,7 @@
 
       <div class="grid">
         <div class="jogador">
-          <p>gabriel:</p>
+          <p>Gabriel:</p>
           <ul>
             <li>
               <span class="03">03</span><span class="17">17</span><span class="22">22</span><span class="37">37</span
@@ -48,7 +48,7 @@
         </div>
 
         <div class="jogador">
-          <p>thal:</p>
+          <p>Thal:</p>
           <ul>
             <li>
               <span class="21">21</span><span class="19">19</span><span class="59">59</span><span class="43">43</span
@@ -70,7 +70,7 @@
         </div>
 
         <div class="jogador">
-          <p>murilo:</p>
+          <p>Murilo:</p>
           <ul>
             <li>
               <span class="08">08</span><span class="13">13</span><span class="17">17</span><span class="22">22</span
@@ -114,7 +114,7 @@
         </div>
 
         <div class="jogador">
-          <p>tontoin:</p>
+          <p>Tontoin:</p>
           <ul>
             <li>
               <span class="16">16</span><span class="36">36</span><span class="45">45</span><span class="47">47</span
@@ -183,20 +183,20 @@
           <p>Luan:</p>
           <ul>
             <li>
-              <span class="25">25</span><span class="33">33</span><span class="07">07</span><span class="11">11</span
+              <span class="07">07</span><span class="11">11</span><span class="25">25</span><span class="33">33</span
               ><span class="45">45</span><span class="50">50</span>
             </li>
             <li>
-              <span class="18">18</span><span class="49">49</span><span class="31">31</span><span class="24">24</span
-              ><span class="08">08</span><span class="57">57</span>
+              <span class="08">08</span><span class="18">18</span><span class="24">24</span><span class="31">31</span
+              ><span class="49">49</span><span class="57">57</span>
             </li>
             <li>
-              <span class="08">08</span><span class="23">23</span><span class="37">37</span><span class="40">40</span
-              ><span class="60">60</span><span class="13">13</span>
+              <span class="08">08</span><span class="13">13</span><span class="23">23</span><span class="37">37</span
+              ><span class="40">40</span><span class="60">60</span>
             </li>
             <li>
-              <span class="15">15</span><span class="54">54</span><span class="33">33</span><span class="28">28</span
-              ><span class="20">20</span><span class="01">01</span>
+              <span class="01">01</span><span class="15">15</span><span class="33">33</span><span class="20">20</span
+              ><span class="28">28</span><span class="54">54</span>
             </li>
           </ul>
         </div>
@@ -245,23 +245,20 @@
           </ul>
         </div>
         <div class="jogador">
-          <p>welg24:</p>
+          <p>Larissa:</p>
           <ul>
             <li>
-              <span class="??">??</span><span class="??">??</span><span class="??">??</span><span class="??">??</span
-              ><span class="??">??</span><span class="??">??</span>
+              <span class="03">03</span><span class="11">11</span><span class="22">22</span><span class="34">34</span
+              ><span class="45">45</span><span class="56">56</span>
             </li>
+          </ul>
+        </div>
+        <div class="jogador">
+          <p>Simpsons:</p>
+          <ul>
             <li>
-              <span class="??">??</span><span class="??">??</span><span class="??">??</span><span class="??">??</span
-              ><span class="??">??</span><span class="??">??</span>
-            </li>
-            <li>
-              <span class="??">??</span><span class="??">??</span><span class="??">??</span><span class="??">??</span
-              ><span class="??">??</span><span class="??">??</span>
-            </li>
-            <li>
-              <span class="??">??</span><span class="??">??</span><span class="??">??</span><span class="??">??</span
-              ><span class="??">??</span><span class="??">??</span>
+              <span class="01">01</span><span class="06">06</span><span class="17">17</span><span class="22">22</span
+              ><span class="24">24</span><span class="35">35</span>
             </li>
           </ul>
         </div>
@@ -326,9 +323,8 @@
         for (let i = 0; i < 3; i++) {
           if (contarPintados(Object.values(element.children)[i]) === 6) {
             const nomeDoGanhador = element.parentNode.querySelector("p").innerText.replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g, "");
-            textoDoGanhador.innerHTML = nomeDoGanhador
+            textoDoGanhador.innerHTML = nomeDoGanhador;
             mostrarModal();
-            console.log("nomeDoGanhador", nomeDoGanhador);
           }
           if (contarPintados(Object.values(element.children)[i + 1]) > contarPintados(Object.values(element.children)[i])) {
             moverParaCima(Object.values(element.children)[i + 1]);
